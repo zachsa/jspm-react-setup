@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Page Title</title>
+  <title>JSPM React Test</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <base href="https://dev.jspm.io/">
   <script type="module">
-  import React from '/react'
-  console.log(React)
+    import React from '/react'
+    import ReactDOM from '/react-dom'
+    import App from './index.js'
+    ReactDOM.render(App(), document.getElementById('root'))
   </script>
 </head>
+
 <body>
+  <div id="root"></div>
 </body>
+
 </html>
