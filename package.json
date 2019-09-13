@@ -1,7 +1,11 @@
 {
   "name": "app",
+  "scripts": {
+    "serve": "http-server"
+  },
   "devDependencies": {
     "@jspm/core": "^1.0.4",
     "http-server": "~0.11.1"
-  }
+  },
+  "type": "module"
 }
