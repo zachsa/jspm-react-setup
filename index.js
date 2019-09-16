@@ -1,8 +1,19 @@
-import React from 'https://dev.jspm.io/react'
-import babel from 'https://dev.jspm.io/@babel/core'
-import jsx from 'https://dev.jspm.io/@babel/plugin-transform-react-jsx'
+import { html, render } from 'https://dev.jspm.io/lit-html'
 
-const appString = '() => <div>hello world</div>'
-export default eval(babel.transform(appString, {
-  plugins: [jsx]
-}).code)
+const Title = ({title}) => html`<p>${title}</p>`
+const Name = ({name}) => html`<p>${name}</p>`
+
+const App = props => html`
+<div>
+  ${Title(props)}
+  <div>
+    ${Name(props)}
+  </div>
+</div>
+`
+
+export default App
+
+setTimeout(() => {
+  render(App({name: 'im going to replace a previously added dom node', title: 'Test 2'}), document.querySelector('div > div'))
+}, 2000);
